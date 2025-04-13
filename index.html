@@ -1,17 +1,313 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Romantismo</title>
-
-    <!-- Tailwind -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <meta charset="UTF-8">
+    <title>Linha do Tempo do Romantismo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #3a2618;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #8b5a2b;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        .container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: #f5f5f5;
+            border: 4px solid #c19a6b;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            left: 50%;
+        }
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid #e6d7c3;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent #e6d7c3;
+        }
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid #e6d7c3;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent #e6d7c3 transparent transparent;
+        }
+        .right::after {
+            left: -10px;
+        }
+        .content {
+            padding: 20px 30px;
+            background-color: #e6d7c3;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .content h2 {
+            color: #5c3b14;
+            margin-bottom: 10px;
+        }
+        .content p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .content ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        .content ul li {
+            margin-bottom: 5px;
+        }
+        .year {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #8b5a2b;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .author {
+            font-style: italic;
+            color: #5c3b14;
+        }
+        @media screen and (max-width: 600px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .container::before {
+                left: 60px;
+                border: medium solid #e6d7c3;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent #e6d7c3 transparent transparent;
+            }
+            .left::after, .right::after {
+                left: 15px;
+            }
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
+    <h1>Linha do Tempo do Romantismo</h1>
+    <div class="timeline">
+        <div class="container left">
+            <div class="content">
+                <span class="year">1760-1780</span>
+                <h2>Origens do Romantismo</h2>
+                <p>Movimento Sturm und Drang ("Tempestade e Ímpeto") na Alemanha, considerado precursor do Romantismo.</p>
+                <p class="author">Principais autores: Johann Wolfgang von Goethe, Friedrich Schiller</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <span class="year">1774</span>
+                <h2>Os Sofrimentos do Jovem Werther</h2>
+                <p>Publicação do romance epistolar de Goethe que se tornou um marco inicial do movimento romântico, inspirando uma onda de suicídios por imitação na Europa.</p>
+                <p class="author">Autor: Johann Wolfgang von Goethe</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <span class="year">1798</span>
+                <h2>Baladas Líricas</h2>
+                <p>Publicação de "Lyrical Ballads" de Wordsworth e Coleridge, considerado o manifesto do Romantismo inglês.</p>
+                <p>Incluiu o poema "The Rime of the Ancient Mariner" (A Balada do Velho Marinheiro).</p>
+                <p class="author">Autores: William Wordsworth e Samuel Taylor Coleridge</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <span class="year">1802</span>
+                <h2>Prefácio das Baladas Líricas</h2>
+                <p>Wordsworth escreve o famoso prefácio que se torna um manifesto teórico do Romantismo inglês, defendendo uma linguagem simples e a expressão genuína dos sentimentos.</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <span class="year">1810-1820</span>
+                <h2>Apogeu do Romantismo Inglês</h2>
+                <p>Segunda geração de poetas românticos ingleses, marcada por intensidade emocional e devoção à beleza.</p>
+                <p class="author">Principais autores: Lord Byron, Percy Bysshe Shelley, John Keats</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <span class="year">1818</span>
+                <h2>Frankenstein</h2>
+                <p>Mary Shelley publica "Frankenstein ou o Prometeu Moderno", obra que combina elementos góticos com questões românticas sobre criação, natureza e humanidade.</p>
+                <p class="author">Autora: Mary Shelley</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <span class="year">1820-1830</span>
+                <h2>Romantismo na França</h2>
+                <p>O movimento ganha força na França, rompendo com o classicismo e valorizando a emoção, a individualidade e o nacionalismo.</p>
+                <p class="author">Principais autores: Victor Hugo, Alphonse de Lamartine, Alexandre Dumas</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <span class="year">1824</span>
+                <h2>Prefácio de Cromwell</h2>
+                <p>Victor Hugo escreve o prefácio do drama "Cromwell", considerado um manifesto do Romantismo francês, defendendo a mistura de gêneros e a quebra das regras clássicas.</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <span class="year">1830</span>
+                <h2>Estreia de Hernani</h2>
+                <p>A peça "Hernani" de Victor Hugo estreia em Paris, provocando acalorados debates entre românticos e classicistas, episódio conhecido como "A Batalha de Hernani".</p>
+                <p class="author">Autor: Victor Hugo</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <span class="year">1831</span>
+                <h2>O Corcunda de Notre-Dame</h2>
+                <p>Victor Hugo publica seu romance histórico ambientado na Paris medieval, consolidando temas românticos como o grotesco e o sublime.</p>
+                <p class="author">Autor: Victor Hugo</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <span class="year">1836</span>
+                <h2>Romantismo no Brasil</h2>
+                <p>Publicação de "Suspiros Poéticos e Saudades" de Gonçalves de Magalhães, marco inicial do Romantismo brasileiro.</p>
+                <p class="author">Autor: Gonçalves de Magalhães</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <span class="year">1840-1850</span>
+                <h2>Romantismo Brasileiro - Primeira Geração</h2>
+                <p>Marcada pelo nacionalismo e valorização da natureza brasileira.</p>
+                <p class="author">Principais autores: Gonçalves Dias ("Canção do Exílio"), Gonçalves de Magalhães, Araújo Porto-Alegre</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <span class="year">1846</span>
+                <h2>A Moreninha</h2>
+                <p>Joaquim Manuel de Macedo publica "A Moreninha", considerado o primeiro romance romântico brasileiro.</p>
+                <p class="author">Autor: Joaquim Manuel de Macedo</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <span class="year">1847</span>
+                <h2>Obras-primas do Romantismo Inglês</h2>
+                <p>Publicação de "Jane Eyre" de Charlotte Brontë e "O Morro dos Ventos Uivantes" de Emily Brontë, exemplos máximos do romance gótico romântico.</p>
+                <p class="author">Autoras: Charlotte e Emily Brontë</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <span class="year">1850-1860</span>
+                <h2>Romantismo Brasileiro - Segunda Geração</h2>
+                <p>Conhecida como "Geração Byroniana" ou "Ultrarromantismo", caracterizada pelo pessimismo, melancolia e fascínio pela morte.</p>
+                <p class="author">Principais autores: Álvares de Azevedo ("Noite na Taverna"), Casimiro de Abreu, Junqueira Freire, Fagundes Varela</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <span class="year">1857</span>
+                <h2>O Guarani</h2>
+                <p>José de Alencar publica "O Guarani", romance emblemático do Romantismo indianista brasileiro, buscando criar uma mitologia nacional.</p>
+                <p class="author">Autor: José de Alencar</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <span class="year">1860-1870</span>
+                <h2>Romantismo Brasileiro - Terceira Geração</h2>
+                <p>Também chamada de "Condoreira", marcada por temas sociais como a abolição da escravatura.</p>
+                <p class="author">Principal autor: Castro Alves ("Navio Negreiro", "Vozes d'África")</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <span class="year">1862</span>
+                <h2>Os Miseráveis</h2>
+                <p>Victor Hugo publica sua obra-prima "Os Miseráveis", romance social que denuncia injustiças e exalta valores humanitários.</p>
+                <p class="author">Autor: Victor Hugo</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <span class="year">1865</span>
+                <h2>Iracema</h2>
+                <p>José de Alencar publica "Iracema", subtitulado "Lenda do Ceará", consolidando o indianismo romântico brasileiro.</p>
+                <p class="author">Autor: José de Alencar</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <span class="year">1870-1880</span>
+                <h2>Declínio do Romantismo</h2>
+                <p>O movimento romântico começa a dar lugar ao Realismo e Naturalismo na literatura europeia e americana.</p>
+                <p>No Brasil, em 1881, Machado de Assis publica "Memórias Póstumas de Brás Cubas", marcando a transição para o Realismo.</p>
+            </div>
+        </div>
+    </div>
 </body>
-
 </html>
